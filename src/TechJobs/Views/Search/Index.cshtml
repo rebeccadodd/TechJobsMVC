@@ -40,7 +40,8 @@
             @foreach (KeyValuePair<string, string> detail in job)
             {
              <tr>
-                 <td>@detail.Key</td>
+                 @*Found capitalization on https://stackoverflow.com/questions/4135317/make-first-letter-of-a-string-upper-case-with-maximum-performance*@
+                 <td>@detail.Key.First().ToString().ToUpper()@detail.Key.Substring(1)</td>
                  <td>@detail.Value</td>
              </tr>
             }
